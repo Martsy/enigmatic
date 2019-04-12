@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/enigma'
@@ -8,7 +10,8 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_class_exists
-    assert_instance_of Enigma, @enigma
+    enigma = Enigma.new
+    assert_instance_of Enigma, enigma
   end
 
   def test_method_encrypt_and_decrypt_with_empty_hash
