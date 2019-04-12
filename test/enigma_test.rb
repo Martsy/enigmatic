@@ -11,8 +11,8 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
-  def test_enigma_class_has_attributes_encrypt_and_decrypt
-    assert_equal @encrypt, @enigma.encrypt
-    assert_equal @decrypt, @enigma.decrypt
+  def test_initialized_encrypt_and_decrypt_with_empty_hash
+    assert_equal ({}), @enigma.encrypt
+    assert_equal ({}), @enigma.decrypt
   end
 end

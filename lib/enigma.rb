@@ -3,7 +3,8 @@ class Enigma
               :decrypt
 
   def initialize(encrypt, decrypt)
-  
+    @encrypt = {}
+    @decrypt = {}
   end
 
   # The keys are created by generating a random five digit
