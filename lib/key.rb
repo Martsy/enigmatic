@@ -13,4 +13,7 @@ class Key
     key.format('%05d').to_s
   end
 
-  
+  def keys_from_number(number)
+    (0..3).to_a.map { |idx| number[idx..idx + 1].to_i }
+  end
+end
