@@ -22,4 +22,8 @@ class OffsetTest < Minitest::Test
     expected = Date.today.strftime('%m%d%y')
     assert_equal expected, offset.date_set
   end
+
+  def test_date_has_six_numbers
+    assert_equal 6, @offset.date_set.length
+  end
 end
