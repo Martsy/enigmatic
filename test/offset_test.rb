@@ -12,4 +12,9 @@ class OffsetTest < Minitest::Test
   def test_offset_class_exists
     assert_instance_of Offset, @offset
   end
+
+  def test_it_has_date
+    assert_equal '040895', @offset.date
+  end
+
 end
