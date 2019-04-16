@@ -5,7 +5,6 @@ require './lib/key'
 
 class KeyTest < Minitest::Test
   def setup
-    # @enigma = Enigma.new
     @key = Key.new('02715')
   end
 
