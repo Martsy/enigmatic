@@ -17,4 +17,9 @@ class OffsetTest < Minitest::Test
     assert_equal '040895', @offset.date
   end
 
+  def test_it_has_todays_date_when_date_not_provided
+    offset = Offset.new(nil)
+    expected = Date.today.strftime('%m%d%y')
+    assert_equal expected, offset.date_set
+  end
 end

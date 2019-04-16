@@ -16,4 +16,6 @@ class Key
   def key_set(key)
     key.chars.each_cons(2).map(&:join).map(&:to_i)
   end
+
+
 end
