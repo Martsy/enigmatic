@@ -5,7 +5,7 @@ require './lib/key'
 
 class KeyTest < Minitest::Test
   def setup
-    @enigma = Enigma.new
+    # @enigma = Enigma.new
     @key = Key.new('02715')
   end
 
@@ -25,8 +25,12 @@ class KeyTest < Minitest::Test
     key1 = Key.new('715')
     key2 = Key.new('21')
     key3 = Key.new('1')
-    assert_equal '00715', key1.keys(715)
-    assert_equal '00021', key2.keys(21)
-    assert_equal '00001', key3.keys(1)
+    assert_equal '00715', key1.keys('715')
+    assert_equal '00021', key2.keys('21')
+    assert_equal '00001', key3.keys('1')
+  end
+
+  def test_keys_can_be_made
+    assert_equal [2, 27, 71, 15], @key.key_set('02715')
   end
 end

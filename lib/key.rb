@@ -12,4 +12,10 @@ class Key
   def keys(key)
     format('%05d', key.to_s)
   end
+
+  def key_set(key)
+    key = key.split(//).each_cons(2).to_a
+    split = key.map(&:join)
+    split.map(&:to_i)
+  end
 end
