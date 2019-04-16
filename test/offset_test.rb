@@ -26,4 +26,9 @@ class OffsetTest < Minitest::Test
   def test_date_has_six_numbers
     assert_equal 6, @offset.date_set.length
   end
+
+  def test_todays_date_is_a_string
+    offset = Offset.new(nil)
+    assert_instance_of String, offset.date_set
+  end
 end
