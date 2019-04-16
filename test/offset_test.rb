@@ -31,4 +31,9 @@ class OffsetTest < Minitest::Test
     offset = Offset.new(nil)
     assert_instance_of String, offset.date_set
   end
+
+  def test_offsets_are_calculated_properly
+    @offset = Offset.new('040895')
+    assert_equal [1, 0, 2, 5], @offset.offsets('040895')
+  end
 end
