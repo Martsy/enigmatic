@@ -3,7 +3,7 @@ class Enigma
     date   = today if date.nil?
     key    = random if key.nil?
     shifts = shifter(date, key)
-    text   = e_cipher(message.downcase, shifts)
+    text   = create_cipher(message.downcase, shifts)
     { key: key, date: date, encryption: text }
   end
 

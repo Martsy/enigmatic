@@ -8,6 +8,7 @@ require './lib/cipher'
 class CipherTest < MiniTest::Test
   def setup
     @cipher = Cipher.new
+    @enigma = Enigma.new
   end
 
   def test_cipher_class_exists
@@ -28,5 +29,13 @@ class CipherTest < MiniTest::Test
     assert_equal 51, @cipher.find_shift('a', 'y')
     assert_equal 25, @cipher.find_shift('g', 'e')
     assert_equal 16, @cipher.find_shift('l', 'a')
+  end
+
+  def test_it_creates_ciphert
+    shifts = [3, 27, 73, 20]
+    message = "hello world!"
+
+    expected = 'keder ohulw!'
+    assert_equal expected, @cipher.create_cipher(message, shifts)
   end
 end
