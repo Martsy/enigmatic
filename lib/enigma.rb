@@ -3,7 +3,7 @@ class Enigma
     date   = today if date.nil?
     key    = random if key.nil?
     shifts = shifter(date, key)
-    text   = e_cipher(message.downcase, shifts)
+    text   = create_cipher(message.downcase, shifts)
     { key: key, date: date, encryption: text }
   end
 
@@ -12,5 +12,11 @@ class Enigma
     shifts = shifter(date, key)
     text   = d_cipher(message, shifts)
     { key: key, date: date, decryption: text }
+  end
+
+  def shifter(date, random)
+    offset = offsets(date)
+    keys = keyed(random)
+    keys.zip(offset).map { |key, ofset| key + ofset }
   end
 end

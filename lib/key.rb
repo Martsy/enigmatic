@@ -13,7 +13,7 @@ class Key
     format('%05d', key.to_s)
   end
 
-  def key_set(key)
-    key.chars.each_cons(2).map(&:join).map(&:to_i)
+  def key_set(number)
+    number.chars.each_cons(2).map(&:join).map(&:to_i)
   end
 end
