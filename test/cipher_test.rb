@@ -24,4 +24,9 @@ class CipherTest < MiniTest::Test
     assert_equal '', @cipher.decode('d', 4)
   end
 
+  def test_it_can_find_shift_from_char
+    assert_equal 51, @cipher.find_shift('a', 'y')
+    assert_equal 25, @cipher.find_shift('g', 'e')
+    assert_equal 16, @cipher.find_shift('l', 'a')
+  end
 end
