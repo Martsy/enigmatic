@@ -1,4 +1,5 @@
 class Cipher
+
   def alpha
     ('a'..'z').to_a << ''
   end
@@ -6,7 +7,7 @@ class Cipher
   def shifter(date, random)
     offset = offsets(date)
     keys = keyed(random)
-    keys.zip(offset).map { |key, offset| key + offset }
+    keys.zip(offset).map { |key, ofset| key + ofset }
   end
 
   def keyed(number)
@@ -16,6 +17,7 @@ class Cipher
   def encode(char, shift)
     ind = alpha.find_index(char)
     return char if ind.nil?
+
     alpha.rotate(shift)[ind]
   end
 
@@ -23,6 +25,7 @@ class Cipher
     shift_alpha = alpha.rotate(shift)
     ind = shift_alpha.find_index(char)
     return char if ind.nil?
+
     alpha[ind]
   end
 
@@ -38,5 +41,12 @@ class Cipher
       encode(char, shifts[ind % 4])
     end
     enc_chars.join('')
+  end
+
+  def decrypt_cipher(message, shifts)
+    dec_chars = message.chars.map.with_index do |char, index|
+      decode(char, shifts[index % 4])
+    end
+    dec_chars.join('')
   end
 end

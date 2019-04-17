@@ -13,4 +13,10 @@ class Enigma
     text   = d_cipher(message, shifts)
     { key: key, date: date, decryption: text }
   end
+
+  def shifter(date, random)
+    offset = offsets(date)
+    keys = keyed(random)
+    keys.zip(offset).map { |key, ofset| key + ofset }
+  end
 end

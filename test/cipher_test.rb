@@ -31,9 +31,9 @@ class CipherTest < MiniTest::Test
     assert_equal 16, @cipher.find_shift('l', 'a')
   end
 
-  def test_it_creates_ciphert
+  def test_it_creates_cipher
     shifts = [3, 27, 73, 20]
-    message = "hello world!"
+    message = 'hello world!'
 
     expected = 'keder ohulw!'
     assert_equal expected, @cipher.create_cipher(message, shifts)
