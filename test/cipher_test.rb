@@ -13,4 +13,10 @@ class CipherTest < MiniTest::Test
   def test_cipher_class_exists
     assert_instance_of Cipher, @cipher
   end
+
+  def test_encoded_letter
+    assert_equal 'd', @cipher.encode('a', 3)
+    assert_equal 'b', @cipher.encode('b', 0)
+  end
+
 end
