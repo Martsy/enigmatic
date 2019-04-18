@@ -1,10 +1,12 @@
 require_relative './shifty.rb'
 require_relative './cipher.rb'
+require_relative './numbers.rb'
 require 'date'
 
 class Enigma
   include Shifty
   include Cipher
+  include Numbers
 
   def encrypt(message, key = nil, date = nil)
     date   = current if date.nil?
