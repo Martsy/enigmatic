@@ -36,7 +36,7 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_decrypt_ciphert_works
+  def test_decrypt_cipher_works
     shifts = [3, 27, 73, 20]
     message = 'keder ohulw'
     expected = 'hello world'
