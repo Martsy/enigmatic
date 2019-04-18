@@ -7,7 +7,7 @@ class Enigma
   include Cipher
 
   def encrypt(message, key = nil, date = nil)
-    date   = current if date.nil?
+    date   = current.to_s if date.nil?
     key    = random if key.nil?
     shifts = shifter(date, key)
     text   = create_cipher(message.downcase, shifts)

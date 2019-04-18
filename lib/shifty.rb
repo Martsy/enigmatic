@@ -19,10 +19,10 @@ module Shifty
   end
 
   def random
-    keys(rand(99_999))
+    keyed(rand(99_999))
   end
 
-  def keys(key)
+  def keyed(key)
     format('%05d', key.to_s)
   end
 
