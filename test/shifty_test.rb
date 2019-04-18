@@ -29,9 +29,9 @@ class ShiftyTest < Minitest::Test
   end
 
   def test_key_will_add_zeros
-    assert_equal '00715', @enigma.keys('715')
-    assert_equal '00021', @enigma.keys('21')
-    assert_equal '00001', @enigma.keys('1')
+    assert_equal '00715', @enigma.keyed('715')
+    assert_equal '00021', @enigma.keyed('21')
+    assert_equal '00001', @enigma.keyed('1')
   end
 
   def test_keys_can_be_made
