@@ -13,7 +13,7 @@ class CipherTest < MiniTest::Test
     @enigma = Enigma.new
     assert_equal 'q', @enigma.decode('q', 0)
     assert_equal 'x', @enigma.decode('c', 6)
-    assert_equal '', @enigma.decode('d', 4)
+    assert_equal ' ', @enigma.decode('d', 4)
     assert_equal '@', @enigma.decode('@', 9)
   end
 end

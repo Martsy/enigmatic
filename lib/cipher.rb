@@ -1,6 +1,6 @@
 module Cipher
   def alpha
-    ('a'..'z').to_a << ''
+    ('a'..'z').to_a << ' '
   end
 
   def encode(char, shift)
